@@ -137,11 +137,11 @@ const fnames = [
   ];
   // Buttons and divs
   const btn = document.getElementById("btn");
-  const clearbtn = document.getElementById("btn-clr");
-  const tenbtn = document.getElementById("btn-ten");
-  const onekbtn = document.getElementById("btn-onek");
-  const copybtn = document.getElementById("btn-copy");
-  const namecount = document.getElementById("namecount");
+  const clearBtn = document.getElementById("btn-clr");
+  const tenBtn = document.getElementById("btn-ten");
+  const onekBtn = document.getElementById("btn-onek");
+  const copyBtn = document.getElementById("btn-copy");
+  const nameCount = document.getElementById("namecount");
   const copyInput = document.getElementById("copy");
 
   // Checkboxes
@@ -237,34 +237,34 @@ const fnames = [
     let a = document.getElementById("data");
     a.append(dataDiv);
     count++;
-    namecount.innerHTML = count;
+    nameCount.innerHTML = count;
     copyInput.value += data;
   }
   btn.onclick = () => {
     generatePerson();
   };
-  clearbtn.onclick = () => {
+  clearBtn.onclick = () => {
       let a = document.getElementById("data");
       a.innerHTML = "";
       count = 0;
-      namecount.innerHTML = count;
+      nameCount.innerHTML = count;
       copyInput.value = "";    
   };
-  tenbtn.onclick = () => {
+  tenBtn.onclick = () => {
     let x = 0;
     while (x < 10) {
       generatePerson();
       x++;
     }
   };
-  onekbtn.onclick = () => {
+  onekBtn.onclick = () => {
     let x = 0;
     while (x < 100) {
       generatePerson();
       x++;
     }
   };
-  copybtn.onclick = () => {
+  copyBtn.onclick = () => {
     copyInput.select();
     copyInput.setSelectionRange(0, 99999); /* For mobile devices */
     navigator.clipboard.writeText(copyInput.value);
