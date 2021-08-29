@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mock person csv data generator</title>
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+      }
+      .grid-r {
+        display: grid;
+        grid-template-rows: repeat(auto-fill);
+      }
+      .grid-c{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: start;
+        align-items: center;
+        justify-items: center;
+      }
+      .border {
+        border: solid 1px gray;
+      }
+      label{
+        border: dotted 1px black;
+        padding: 0.2rem;
+      }
+      form{        
+        margin: 1rem 0;
+      }
+      .top{
+        position: sticky;
+        top: 0;
+        background-color: white;
+        border-bottom: 2px solid black ;
+      }
+      body{
+        margin: 2rem;
+      }
+      #copy{
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h2>Mock client data generator</h2>
+      <button id="btn">Generate name</button>
+      <button id="btn-ten">Generate x 10</button>
+      <button id="btn-onek">Generate x 100</button>
+      <button id="btn-clr">Clear names</button>
+      <button id="btn-copy">Copy all names</button>
+      <div>Names generated: <span id="namecount"></span></div>    
+      <form class="grid-c">
+        <label>Name<input type="checkbox" id="a" checked></label>        
+        <label>Birthday<input type="checkbox" id="b" checked></label>
+        <label>Address<input type="checkbox" id="c" checked></label>     
+        <label>Postalcode<input type="checkbox" id="d" checked></label>     
+        <label>City<input type="checkbox" id="e" checked></label>     
+        <label>Phone<input type="checkbox" id="f" checked></label> 
+      </form>      
+    </div>
+    <div class="grid-r" id="data"></div>
+    <input type="text" id="copy">
+    <script src="index.js"></script>
+  </body>
+</html>
